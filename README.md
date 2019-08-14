@@ -1,18 +1,18 @@
 # JavaScript Code Challenge
 
 ## Allowed Resources
-This Code Challenge is designed to test your abilities in a similar situation to a technical assessment from an employer. In order to achieve an accurate assessment, there are a few restrictions on the resources you may use to complete this code challenge. 
+This Code Challenge is designed to test your abilities in a similar situation to a technical assessment from an employer. In order to achieve an accurate assessment, there are a few restrictions on the resources you may use to complete this code challenge.
 
 ### Allowed
 
  1. Your brain!
  2. The Debugger. Please run and debug your code
  3. The general internet
- 
+
 ### Not Allowed
 
  1. Other students
- 2. Any prepared materials 
+ 2. Any prepared materials
  3. Any lessons
  4. Any solution code from any lab, whether you wrote it or Flatiron School did
  5. Code from any lecture
@@ -35,11 +35,11 @@ A user of your app must be able to do the following things:
   - any comments that image has
   - the number of likes that image has
 
-- As a user, I can click a button to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
+- As a user, I can **click** a button to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
 
-- As a user, I can enter text in an input field, and submit the form that the input is in. When I do, the app should add comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
+- As a user, I can *enter text in an input field*, and **submit** the form that the input is in. When I do, the app should add comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
 
-- As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, make sure their changes are sent to the backend API.
+- As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, *make sure their changes are sent to the backend API*.
 
 ## Functionality demo
 
@@ -53,7 +53,7 @@ We have provided a series of prioritized steps to help you break down your appro
 
 ## Step 1 - Get the Image Data
 
-When the page loads, you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but *make sure you read the API documentation* to familiarize yourself with the models, their associations, and the available endpoints of the API.
+**When the page loads**, you will need to make a **request** to the API to get the data about your picture. The API follows RESTful conventions, but *make sure you read the API documentation* to familiarize yourself with the models, their associations, and the available endpoints of the API.
 
 #### API Docs
 
@@ -88,14 +88,14 @@ Example Response:
 
 Use the data from the API response to change what's currently on the page (take a look at the already provided `index.html`). You will need to add/update:
 
-- the image url
-- the image name
-- the number of likes
-- any comments in an unordered list
+- the image url ✅
+- the image name ✅
+- the number of likes ✅
+- any comments in an unordered list ✅
 
 (If you cannot get your fetch request to work correctly, you can  use the example response above to append content to the DOM and attempt the subsequent steps)
 
-## Step 2 - Like Feature (Frontend)
+## Step 2 - Like Feature (Frontend) ✅
 
 The next feature to approach is the functionality to add likes to a picture. First, get this working in the browser only without worrying about persistence.
 
@@ -105,7 +105,7 @@ A user can like the same picture multiple times.
 
 ---
 
-## Step 3 - Like Feature (Backend)
+## Step 3 - Like Feature (Backend) ✅
 
 This app will use what is called _optimistic rendering_. This means the DOM will be updated *before* the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next, your job is to make a POST request to persist the new Like in the backend database.
 
@@ -146,13 +146,13 @@ To test your code, make sure the number of likes increments when you click the l
 
 ---
 
-## Step 4 - Comment Feature (Frontend)
+## Step 4 - Comment Feature (Frontend) ✅
 
 The next feature to approach is the functionality to add comments to a picture. First, get this working in the browser only, without worrying about persistence.
 
 Filling out the input and clicking 'Submit' should append your new comment as an `<li>` to the comments unordered list element. You should also clear out the text in the comment input, so it's empty and ready for the next comment to be added.
 
-## Step 5 - Comment Feature (Backend)
+## Step 5 - Comment Feature (Backend) ✅
 
 As before, we need to persist the comment to the database, after optimistically rendering a comment.
 
