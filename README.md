@@ -51,9 +51,9 @@ For this challenge it is important to work iteratively: one feature at a time, b
 
 We have provided a series of prioritized steps to help you break down your approach this problem:
 
-## Step 1 - Get the Image Data
+<!-- ## Step 1 - Get the Image Data
 
-When the page loads, you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but *make sure you read the API documentation* to familiarize yourself with the models, their associations, and the available endpoints of the API.
+When the page loads, you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but *make sure you read the API documentation* to familiarize yourself with the models, their associations, and the available endpoints of the API. -->
 
 #### API Docs
 
