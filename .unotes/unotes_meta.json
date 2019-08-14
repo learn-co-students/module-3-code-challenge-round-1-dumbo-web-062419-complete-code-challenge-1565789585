@@ -1,0 +1,17 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "CONTRIBUTING": 0,
+    "LICENSE": 1,
+    "README": 2
+  }
+}

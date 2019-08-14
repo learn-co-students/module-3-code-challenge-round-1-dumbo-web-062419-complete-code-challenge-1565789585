@@ -1,28 +1,29 @@
 # JavaScript Code Challenge
 
 ## Allowed Resources
-This Code Challenge is designed to test your abilities in a similar situation to a technical assessment from an employer. In order to achieve an accurate assessment, there are a few restrictions on the resources you may use to complete this code challenge. 
+
+This Code Challenge is designed to test your abilities in a similar situation to a technical assessment from an employer. In order to achieve an accurate assessment, there are a few restrictions on the resources you may use to complete this code challenge.
 
 ### Allowed
 
- 1. Your brain!
- 2. The Debugger. Please run and debug your code
- 3. The general internet
- 
+1. Your brain!
+2. The Debugger. Please run and debug your code
+3. The general internet
+
 ### Not Allowed
 
- 1. Other students
- 2. Any prepared materials 
- 3. Any lessons
- 4. Any solution code from any lab, whether you wrote it or Flatiron School did
- 5. Code from any lecture
+1. Other students
+2. Any prepared materials
+3. Any lessons
+4. Any solution code from any lab, whether you wrote it or Flatiron School did
+5. Code from any lecture
 
 ## Objectives
 
-- DOM Manipulation
-- Events and Event Handlers
-- Callbacks
-- Fetching from APIs
+* DOM Manipulation
+* Events and Event Handlers
+* Callbacks
+* Fetching from APIs
 
 ## Instructions
 
@@ -30,20 +31,17 @@ Today we're building an app for viewing, liking, and commenting on a single pict
 
 A user of your app must be able to do the following things:
 
-- As a user, when the page loads, I should see:
-  - an image
-  - any comments that image has
-  - the number of likes that image has
-
-- As a user, I can click a button to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
-
-- As a user, I can enter text in an input field, and submit the form that the input is in. When I do, the app should add comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
-
-- As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, make sure their changes are sent to the backend API.
+* As a user, when the page loads, I should see:
+    * an image
+    * any comments that image has
+    * the number of likes that image has
+* As a user, I can click a button to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
+* As a user, I can enter text in an input field, and submit the form that the input is in. When I do, the app should add comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
+* As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, make sure their changes are sent to the backend API.
 
 ## Functionality demo
 
-![Example](./animated_challenge_example.gif "Example Functionality")
+![Example](./animated_challenge_example.gif)
 
 ## Deliverables and How to Approach
 
@@ -59,15 +57,15 @@ When the page loads, you will need to make a request to the API to get the data 
 
 #### Endpoint to show an individual Image
 
-Visit https://randopic.herokuapp.com/ in your web browser. The backend will assign you your very own `image_id`.  **THIS IS YOUR ASSIGNED IMAGE. This prevents your classmates from editing your images and vice versa**.
+Visit https://randopic.herokuapp.com/ in your web browser. The backend will assign you your very own `image_id`. **THIS IS YOUR ASSIGNED IMAGE. This prevents your classmates from editing your images and vice versa**.
 
 **Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your image id, and use it as the `/:id` parameter in your initial GET request.** This will be the image you'll be working with for this code challenge.
 
-```js
+``` js
 GET 'https://randopic.herokuapp.com/images/:id'
 ```
 
-```json
+``` json
 Example Response:
 {
   "id": 1,
@@ -88,12 +86,12 @@ Example Response:
 
 Use the data from the API response to change what's currently on the page (take a look at the already provided `index.html`). You will need to add/update:
 
-- the image url
-- the image name
-- the number of likes
-- any comments in an unordered list
+* the image url
+* the image name
+* the number of likes
+* any comments in an unordered list
 
-(If you cannot get your fetch request to work correctly, you can  use the example response above to append content to the DOM and attempt the subsequent steps)
+(If you cannot get your fetch request to work correctly, you can use the example response above to append content to the DOM and attempt the subsequent steps)
 
 ## Step 2 - Like Feature (Frontend)
 
@@ -103,11 +101,11 @@ Clicking the 'Like' button should increase the number of likes shown on the page
 
 A user can like the same picture multiple times.
 
----
+- - -
 
 ## Step 3 - Like Feature (Backend)
 
-This app will use what is called _optimistic rendering_. This means the DOM will be updated *before* the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next, your job is to make a POST request to persist the new Like in the backend database.
+This app will use what is called *optimistic rendering*. This means the DOM will be updated *before* the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next, your job is to make a POST request to persist the new Like in the backend database.
 
 #### API Docs
 
@@ -115,7 +113,7 @@ This app will use what is called _optimistic rendering_. This means the DOM will
 
 Send a string containing a JSON object as the request's body. In the JSON, make sure the `image_id` key has the value of your assigned image ID. This will tell your newly-created like which image it belongs to (remember database associations?😱).
 
-```js
+``` js
 POST 'https://randopic.herokuapp.com/likes'
 
 Required keys in the body of the request:
@@ -130,7 +128,7 @@ Required Headers
 }
 ```
 
-```json
+``` json
 Example Response:
 {
     "id": 112,
@@ -144,7 +142,7 @@ Since we are using optimistic rendering, you shouldn't have to do anything with 
 
 To test your code, make sure the number of likes increments when you click the like button. Then, refresh the page and make sure the increased number of likes remains the same.
 
----
+- - -
 
 ## Step 4 - Comment Feature (Frontend)
 
@@ -162,7 +160,7 @@ As before, we need to persist the comment to the database, after optimistically 
 
 Similarly to before, this POST request's body should include the your assigned `imageId`. Remember associations? A `comment` `belongs_to` an `image`, so we need to send the `image_id` that the comment should be associated with:
 
-```js
+``` js
 POST 'https://randopic.herokuapp.com/comments'
 
 Required keys in the body of the request:
@@ -178,8 +176,7 @@ Required Headers
 }
 ```
 
-
-```json
+``` json
 Example Response (created comment):
 {
   "id": 5,
@@ -217,4 +214,4 @@ Example Response:
 }
 ```
 
-_(Hint: To get the comment's id you may have to think about changing the way you handle the response received from creating a comment)_
+*(Hint: To get the comment's id you may have to think about changing the way you handle the response received from creating a comment)*
