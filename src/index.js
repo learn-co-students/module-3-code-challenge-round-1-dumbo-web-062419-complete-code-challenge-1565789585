@@ -23,9 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
       image.src = data.url
       imageTitle.innerText = data.name
       likes.innerText = data.like_count
-      
-      
+      renderComments(data)
     })
+    
+    function renderComments(data) {
+      data.comments.forEach( comment => {
+        const newLi = document.createElement('li')
+        const addComments = document.getElementById('comments')
+        newLi.innerText = comment.content
+        addComments.append(newLi)
+      })
+    }
+
+
 })
 
 // ---------> LIKE BUTTON
@@ -40,13 +50,13 @@ likebutton.addEventListener('click', function() {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
+      // "Accept": "application/json"
     },
     body: JSON.stringify({
-      imageId: `${imageId}`,
-      like_count: `${likes.innerText}`
+      "image_id": imageId
     })
-      .then(response => response.json())
-  })
+      
+  }).then(response => response.json())
 })
 
 //----------------> COMMENT
@@ -67,8 +77,8 @@ form.addEventListener('submit', event => {
       Accept: 'application/json'
     },
     body: JSON.stringify({
-      image_id: `${imageId}`,
-      content: `${comments.value}`
+      "image_id": `${imageId}`, //_____
+      "content": `${comments.value}` //_____
     })
   }).then(response => response.json())
   .then(data => console.log(data))
